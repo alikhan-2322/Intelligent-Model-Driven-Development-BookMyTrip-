@@ -1,0 +1,69 @@
+```json
+{
+  "classes": [
+    {
+      "name": "User",
+      "attributes": [
+        { "name": "userId", "type": "String" },
+        { "name": "name", "type": "String" },
+        { "name": "email", "type": "String" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "Booking", "multiplicity": "1..*" }
+      ]
+    },
+    {
+      "name": "TripService",
+      "attributes": [
+        { "name": "serviceId", "type": "String" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "Trip", "multiplicity": "1..*" }
+      ]
+    },
+    {
+      "name": "PaymentService",
+      "attributes": [
+        { "name": "serviceId", "type": "String" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "Payment", "multiplicity": "1..*" }
+      ]
+    },
+    {
+      "name": "Trip",
+      "attributes": [
+        { "name": "tripId", "type": "String" },
+        { "name": "destination", "type": "String" },
+        { "name": "date", "type": "Date" },
+        { "name": "price", "type": "Double" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "Booking", "multiplicity": "0..*" }
+      ]
+    },
+    {
+      "name": "Booking",
+      "attributes": [
+        { "name": "bookingId", "type": "String" },
+        { "name": "status", "type": "String" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "Trip", "multiplicity": "1" },
+        { "type": "association", "target": "Payment", "multiplicity": "0..1" }
+      ]
+    },
+    {
+      "name": "Payment",
+      "attributes": [
+        { "name": "paymentId", "type": "String" },
+        { "name": "amount", "type": "Double" },
+        { "name": "status", "type": "String" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "Booking", "multiplicity": "1" }
+      ]
+    }
+  ]
+}
+```

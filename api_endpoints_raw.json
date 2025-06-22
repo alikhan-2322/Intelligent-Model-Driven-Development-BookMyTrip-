@@ -1,0 +1,88 @@
+{
+  "id": "chatcmpl-BekYV7DKQzgutMnYxz7whJMCsxLam",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Certainly! Below is a list of REST API endpoints for the BookMyTrip application, based on the provided use-cases and data model:\n\n### Trip Endpoints\n\n1. **GET /trips**\n   - **Description**: Retrieve a list of all available trips.\n\n2. **GET /trips/{id}**\n   - **Description**: Retrieve details of a specific trip by its ID.\n\n3. **GET /trips/search**\n   - **Description**: Search for trips based on criteria such as destination, start date, and end date.\n\n4. **GET /trips/compare**\n   - **Description**: Compare prices of different trips based on specified criteria.\n\n### Booking Endpoints\n\n5. **POST /bookings**\n   - **Description**: Create a new booking for a trip.\n\n6. **GET /bookings/{id}**\n   - **Description**: Retrieve details of a specific booking by its ID.\n\n7. **DELETE /bookings/{id}**\n   - **Description**: Cancel a specific booking by its ID.\n\n### User Endpoints\n\n8. **GET /users**\n   - **Description**: Retrieve a list of all users.\n\n9. **GET /users/{id}**\n   - **Description**: Retrieve details of a specific user by their ID.\n\n10. **POST /users**\n    - **Description**: Create a new user account.\n\n11. **PUT /users/{id}**\n    - **Description**: Update details of a specific user by their ID.\n\n### Payment Endpoints\n\n12. **POST /payments**\n    - **Description**: Process a payment for a booking.\n\n13. **GET /payments/{id}**\n    - **Description**: Retrieve details of a specific payment transaction by its ID.\n\n### Review Endpoints\n\n14. **POST /reviews**\n    - **Description**: Submit a review for a trip.\n\n15. **GET /reviews/trip/{tripId}**\n    - **Description**: Retrieve all reviews for a specific trip.\n\n16. **GET /reviews/user/{userId}**\n    - **Description**: Retrieve all reviews submitted by a specific user.\n\nThese endpoints provide a comprehensive interface for interacting with the BookMyTrip application, covering trip management, booking operations, user management, payment processing, and review submissions.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": []
+      },
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "protected_material_code": {
+          "filtered": false,
+          "detected": false
+        },
+        "protected_material_text": {
+          "filtered": false,
+          "detected": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ],
+  "created": 1749051779,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_ee1d74bde0",
+  "usage": {
+    "completion_tokens": 479,
+    "prompt_tokens": 490,
+    "total_tokens": 969,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "prompt_filter_results": [
+    {
+      "prompt_index": 0,
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "jailbreak": {
+          "filtered": false,
+          "detected": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ]
+}

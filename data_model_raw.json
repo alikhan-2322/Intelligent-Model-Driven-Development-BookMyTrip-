@@ -1,0 +1,88 @@
+{
+  "id": "chatcmpl-BekYMQJWYU8noeZbKwsHq6T2W6Fnk",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Certainly! Below is a simple data model for the BookMyTrip application, including key entities and their fields:\n\n- **Trip**\n  - **id**: Unique identifier for the trip.\n  - **destination**: Location where the trip is headed.\n  - **startDate**: Date when the trip begins.\n  - **endDate**: Date when the trip ends.\n  - **price**: Cost of the trip.\n\n- **Booking**\n  - **id**: Unique identifier for the booking.\n  - **userId**: Identifier for the user who made the booking.\n  - **tripId**: Identifier for the trip that is booked.\n  - **status**: Current status of the booking (e.g., confirmed, canceled).\n\n- **User**\n  - **id**: Unique identifier for the user.\n  - **name**: Full name of the user.\n  - **email**: Email address of the user.\n\n- **Payment**\n  - **id**: Unique identifier for the payment transaction.\n  - **bookingId**: Identifier for the associated booking.\n  - **amount**: Amount paid for the booking.\n  - **paymentDate**: Date when the payment was made.\n  - **paymentMethod**: Method used for payment (e.g., credit card, PayPal).\n\n- **Review**\n  - **id**: Unique identifier for the review.\n  - **tripId**: Identifier for the trip being reviewed.\n  - **userId**: Identifier for the user who wrote the review.\n  - **rating**: Rating given to the trip (e.g., 1 to 5 stars).\n  - **comment**: Textual feedback provided by the user.\n\nThese entities and fields provide a foundational structure for managing trips, bookings, users, payments, and reviews within the BookMyTrip application.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": []
+      },
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "protected_material_code": {
+          "filtered": false,
+          "detected": false
+        },
+        "protected_material_text": {
+          "filtered": false,
+          "detected": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ],
+  "created": 1749051770,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_ee1d74bde0",
+  "usage": {
+    "completion_tokens": 381,
+    "prompt_tokens": 135,
+    "total_tokens": 516,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "prompt_filter_results": [
+    {
+      "prompt_index": 0,
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "jailbreak": {
+          "filtered": false,
+          "detected": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ]
+}

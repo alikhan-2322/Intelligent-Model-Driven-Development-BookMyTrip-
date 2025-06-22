@@ -1,0 +1,93 @@
+```json
+[
+  {
+    "usecase": "Search Trips",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestTripSearch" },
+      { "from_role": "TripService", "to_role": "User", "action": "returnTripResults" }
+    ]
+  },
+  {
+    "usecase": "View Trip Details",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestTripDetails" },
+      { "from_role": "TripService", "to_role": "User", "action": "returnTripDetails" }
+    ]
+  },
+  {
+    "usecase": "Book Trip",
+    "lifelines": ["User", "TripService", "PaymentService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestBooking" },
+      { "from_role": "TripService", "to_role": "PaymentService", "action": "initiatePayment" },
+      { "from_role": "PaymentService", "to_role": "TripService", "action": "confirmPayment" },
+      { "from_role": "TripService", "to_role": "User", "action": "confirmBooking" }
+    ]
+  },
+  {
+    "usecase": "Cancel Booking",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestCancellation" },
+      { "from_role": "TripService", "to_role": "User", "action": "confirmCancellation" }
+    ]
+  },
+  {
+    "usecase": "Manage Booking",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestBookingManagement" },
+      { "from_role": "TripService", "to_role": "User", "action": "provideBookingOptions" }
+    ]
+  },
+  {
+    "usecase": "Make Payment",
+    "lifelines": ["User", "PaymentService"],
+    "messages": [
+      { "from_role": "User", "to_role": "PaymentService", "action": "requestPayment" },
+      { "from_role": "PaymentService", "to_role": "User", "action": "confirmPayment" }
+    ]
+  },
+  {
+    "usecase": "Receive Confirmation",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "TripService", "to_role": "User", "action": "sendConfirmation" }
+    ]
+  },
+  {
+    "usecase": "View Itinerary",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestItinerary" },
+      { "from_role": "TripService", "to_role": "User", "action": "provideItinerary" }
+    ]
+  },
+  {
+    "usecase": "Search by Destination",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestDestinationSearch" },
+      { "from_role": "TripService", "to_role": "User", "action": "returnDestinationResults" }
+    ]
+  },
+  {
+    "usecase": "Search by Date",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestDateSearch" },
+      { "from_role": "TripService", "to_role": "User", "action": "returnDateResults" }
+    ]
+  },
+  {
+    "usecase": "Search by Price",
+    "lifelines": ["User", "TripService"],
+    "messages": [
+      { "from_role": "User", "to_role": "TripService", "action": "requestPriceSearch" },
+      { "from_role": "TripService", "to_role": "User", "action": "returnPriceResults" }
+    ]
+  }
+]
+```

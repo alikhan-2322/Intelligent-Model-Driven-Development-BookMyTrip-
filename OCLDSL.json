@@ -1,0 +1,42 @@
+```json
+{
+  "invariants": [
+    {
+      "name": "UserEmailFormat",
+      "constraint": "self.email.matches('[^@\\s]+@[^@\\s]+\\.[^@\\s]+')"
+    },
+    {
+      "name": "TripPriceNonNegative",
+      "constraint": "self.price >= 0"
+    },
+    {
+      "name": "PaymentAmountNonNegative",
+      "constraint": "self.amount >= 0"
+    }
+  ],
+  "preconditions": [
+    {
+      "name": "BookingCreationPrecondition",
+      "on": "Booking",
+      "constraint": "self.status = 'Pending'"
+    },
+    {
+      "name": "PaymentInitiationPrecondition",
+      "on": "Payment",
+      "constraint": "self.status = 'Unpaid'"
+    }
+  ],
+  "postconditions": [
+    {
+      "name": "BookingCompletionPostcondition",
+      "on": "Booking",
+      "constraint": "self.status = 'Confirmed'"
+    },
+    {
+      "name": "PaymentCompletionPostcondition",
+      "on": "Payment",
+      "constraint": "self.status = 'Paid'"
+    }
+  ]
+}
+```
