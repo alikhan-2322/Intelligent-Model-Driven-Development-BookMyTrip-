@@ -1,26 +1,26 @@
 {
-  "id": "chatcmpl-BlzsRxmcebG8TWYF20nYe9keiCacN",
+  "id": "chatcmpl-Bm2UCHdVf4cPnWCYAkFeIJNd0ajgl",
   "choices": [
     {
       "finish_reason": "stop",
       "index": 0,
       "logprobs": null,
       "message": {
-        "content": "Based on the provided use-cases and data model for the BookMyTrip application, here is a list of possible REST API endpoints:\n\n1. **Trips**\n\n   - **GET /trips**\n     - Retrieve a list of all available trips.\n\n   - **GET /trips/{id}**\n     - Retrieve details of a specific trip by its unique identifier.\n\n   - **GET /trips/search**\n     - Search for trips based on destination, date range, or other criteria.\n\n2. **Comparing Prices**\n\n   - **GET /trips/comparePrices**\n     - Compare prices of trips based on specific criteria like destination or date range.\n\n3. **Bookings**\n\n   - **POST /bookings**\n     - Make a booking for a trip.\n\n   - **GET /bookings**\n     - Retrieve a list of all bookings made by the user.\n\n   - **GET /bookings/{id}**\n     - Retrieve details of a specific booking by its unique identifier.\n\n   - **DELETE /bookings/{id}**\n     - Cancel an existing booking by its unique identifier.\n\n4. **Users**\n\n   - **GET /users/{id}**\n     - Retrieve details of a specific user by their unique identifier.\n\n   - **POST /users**\n     - Register a new user.\n\n   - **PUT /users/{id}**\n     - Update details of an existing user.\n\n5. **Payments**\n\n   - **POST /payments**\n     - Process a payment for a booking.\n\n   - **GET /payments/{id}**\n     - Retrieve details of a specific payment by its unique identifier.\n\n6. **Reviews**\n\n   - **POST /reviews**\n     - Submit a review for a trip.\n\n   - **GET /reviews/trip/{tripId}**\n     - Retrieve all reviews for a specific trip by its unique identifier.\n\n   - **GET /reviews/user/{userId}**\n     - Retrieve all reviews submitted by a specific user.\n\nThese endpoints encompass functionality for searching trips, booking trips, and managing user and payment information, as well as submitting and retrieving reviews.",
+        "content": "Certainly! Below is a list of REST API endpoints for the BookMyTrip application, aligned with your use cases and data model:\n\n### Trip Endpoints\n1. **GET /trips**\n   - Retrieve a list of available trips.\n   \n2. **GET /trips/{id}**\n   - Retrieve detailed information about a specific trip.\n   \n3. **GET /trips/search**\n   - Search for trips based on criteria like destination, date, and price.\n\n### User Endpoints\n4. **GET /users**\n   - Retrieve a list of users.\n   \n5. **GET /users/{id}**\n   - Retrieve detailed information about a specific user.\n   \n6. **POST /users**\n   - Create a new user account.\n   \n7. **PUT /users/{id}**\n   - Update information for an existing user.\n   \n8. **DELETE /users/{id}**\n   - Remove a user account from the system.\n\n### Booking Endpoints\n9. **GET /bookings**\n   - Retrieve a list of all bookings.\n   \n10. **GET /bookings/{id}**\n    - Get details about a specific booking.\n    \n11. **POST /bookings**\n    - Create a new booking for a trip.\n    \n12. **PUT /bookings/{id}/cancel**\n    - Cancel a specific booking.\n    \n13. **PUT /bookings/{id}/confirm**\n    - Confirm a pending booking.\n\n### Payment Endpoints\n14. **GET /payments**\n    - Retrieve a list of all payment transactions.\n    \n15. **GET /payments/{id}**\n    - Get details about a specific payment transaction.\n    \n16. **POST /payments**\n    - Record a payment for a booking.\n\n### Feedback Endpoints\n17. **GET /feedbacks**\n    - Retrieve a list of all feedback entries.\n    \n18. **GET /feedbacks/{id}**\n    - Get details about a specific feedback entry.\n    \n19. **POST /feedbacks**\n    - Submit feedback for a trip.\n    \n20. **PUT /feedbacks/{id}**\n    - Update an existing feedback entry.\n    \n21. **DELETE /feedbacks/{id}**\n    - Remove a feedback entry from the system.\n\nThese endpoints cover the core functionality of the BookMyTrip application, including searching and booking trips, user management, payments, and trip feedback.",
         "refusal": null,
         "role": "assistant",
         "annotations": []
       }
     }
   ],
-  "created": 1750778971,
+  "created": 1750789000,
   "model": "gpt-4o-2024-08-06",
   "object": "chat.completion",
   "system_fingerprint": "fp_ee1d74bde0",
   "usage": {
-    "completion_tokens": 425,
-    "prompt_tokens": 556,
-    "total_tokens": 981,
+    "completion_tokens": 489,
+    "prompt_tokens": 478,
+    "total_tokens": 967,
     "completion_tokens_details": {
       "accepted_prediction_tokens": 0,
       "audio_tokens": 0,

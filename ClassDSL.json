@@ -4,118 +4,83 @@
     {
       "name": "User",
       "attributes": [
-        { "name": "userId", "type": "String" },
-        { "name": "name", "type": "String" },
-        { "name": "email", "type": "String" }
+        {"name": "userId", "type": "String"},
+        {"name": "name", "type": "String"},
+        {"name": "email", "type": "String"}
       ],
       "relationships": [
-        { "type": "association", "target": "Booking", "multiplicity": "1..*" },
-        { "type": "association", "target": "Payment", "multiplicity": "1..*" },
-        { "type": "association", "target": "Account", "multiplicity": "1" }
+        {"type": "association", "target": "Booking", "multiplicity": "1..*"},
+        {"type": "association", "target": "Payment", "multiplicity": "1..*"},
+        {"type": "association", "target": "Review", "multiplicity": "0..*"}
       ]
     },
     {
-      "name": "TripCatalog",
+      "name": "Destination",
       "attributes": [
-        { "name": "trips", "type": "List<Trip>" }
+        {"name": "destinationId", "type": "String"},
+        {"name": "name", "type": "String"},
+        {"name": "location", "type": "String"}
       ],
       "relationships": [
-        { "type": "association", "target": "Trip", "multiplicity": "0..*" }
-      ]
-    },
-    {
-      "name": "Trip",
-      "attributes": [
-        { "name": "tripId", "type": "String" },
-        { "name": "destination", "type": "String" },
-        { "name": "price", "type": "Double" }
-      ],
-      "relationships": [
-        { "type": "association", "target": "TripCatalog", "multiplicity": "1" }
-      ]
-    },
-    {
-      "name": "TripDetails",
-      "attributes": [
-        { "name": "detailsId", "type": "String" },
-        { "name": "description", "type": "String" },
-        { "name": "availability", "type": "Boolean" }
-      ],
-      "relationships": [
-        { "type": "association", "target": "Trip", "multiplicity": "1" }
-      ]
-    },
-    {
-      "name": "BookingSystem",
-      "attributes": [],
-      "relationships": [
-        { "type": "association", "target": "Booking", "multiplicity": "1..*" }
+        {"type": "association", "target": "Booking", "multiplicity": "0..*"}
       ]
     },
     {
       "name": "Booking",
       "attributes": [
-        { "name": "bookingId", "type": "String" },
-        { "name": "trip", "type": "Trip" },
-        { "name": "status", "type": "String" }
+        {"name": "bookingId", "type": "String"},
+        {"name": "date", "type": "Date"},
+        {"name": "status", "type": "String"}
       ],
       "relationships": [
-        { "type": "association", "target": "User", "multiplicity": "1" },
-        { "type": "association", "target": "Payment", "multiplicity": "0..1" }
-      ]
-    },
-    {
-      "name": "PaymentGateway",
-      "attributes": [],
-      "relationships": [
-        { "type": "association", "target": "Payment", "multiplicity": "1..*" }
+        {"type": "association", "target": "User", "multiplicity": "1"},
+        {"type": "association", "target": "Destination", "multiplicity": "1..*"},
+        {"type": "association", "target": "Payment", "multiplicity": "1"},
+        {"type": "association", "target": "Itinerary", "multiplicity": "0..1"}
       ]
     },
     {
       "name": "Payment",
       "attributes": [
-        { "name": "paymentId", "type": "String" },
-        { "name": "amount", "type": "Double" },
-        { "name": "paymentStatus", "type": "String" }
+        {"name": "paymentId", "type": "String"},
+        {"name": "amount", "type": "Decimal"},
+        {"name": "status", "type": "String"}
       ],
       "relationships": [
-        { "type": "association", "target": "Booking", "multiplicity": "1" },
-        { "type": "association", "target": "User", "multiplicity": "1" }
+        {"type": "association", "target": "Booking", "multiplicity": "1"}
       ]
     },
     {
-      "name": "RefundSystem",
-      "attributes": [],
-      "relationships": [
-        { "type": "association", "target": "Refund", "multiplicity": "1..*" }
-      ]
-    },
-    {
-      "name": "Refund",
+      "name": "Cancellation",
       "attributes": [
-        { "name": "refundId", "type": "String" },
-        { "name": "amount", "type": "Double" },
-        { "name": "refundStatus", "type": "String" }
+        {"name": "cancellationId", "type": "String"},
+        {"name": "date", "type": "Date"},
+        {"name": "reason", "type": "String"}
       ],
       "relationships": [
-        { "type": "association", "target": "User", "multiplicity": "1" }
+        {"type": "association", "target": "Booking", "multiplicity": "1"}
       ]
     },
     {
-      "name": "AccountSystem",
-      "attributes": [],
-      "relationships": [
-        { "type": "association", "target": "Account", "multiplicity": "1..*" }
-      ]
-    },
-    {
-      "name": "Account",
+      "name": "Itinerary",
       "attributes": [
-        { "name": "accountId", "type": "String" },
-        { "name": "accountStatus", "type": "String" }
+        {"name": "itineraryId", "type": "String"},
+        {"name": "details", "type": "String"}
       ],
       "relationships": [
-        { "type": "association", "target": "User", "multiplicity": "1" }
+        {"type": "association", "target": "Booking", "multiplicity": "1"}
+      ]
+    },
+    {
+      "name": "Review",
+      "attributes": [
+        {"name": "reviewId", "type": "String"},
+        {"name": "content", "type": "String"},
+        {"name": "rating", "type": "Integer"}
+      ],
+      "relationships": [
+        {"type": "association", "target": "Booking", "multiplicity": "1"},
+        {"type": "association", "target": "User", "multiplicity": "1"}
       ]
     }
   ]

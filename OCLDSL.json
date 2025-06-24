@@ -2,54 +2,50 @@
 {
   "invariants": [
     {
-      "name": "TripAvailabilityInvariant",
-      "constraint": "TripDetails->forAll(details | details.availability = true implies TripCatalog.trips->includes(details.trip))"
+      "name": "ValidUserEmail",
+      "constraint": "self.email.matches('[^@\\s]+@[^@\\s]+\\.[^@\\s]+')"
     },
     {
-      "name": "BookingAmountInvariant",
-      "constraint": "Booking->forAll(b | b.status = 'Confirmed' implies Payment.amount = b.trip.price)"
+      "name": "BookingDateInFuture",
+      "constraint": "self.date > today()"
     },
     {
-      "name": "UserBookingMultiplicityInvariant",
-      "constraint": "User->forAll(u | u.booking->size() >= 1)"
-    },
-    {
-      "name": "UserPaymentMultiplicityInvariant",
-      "constraint": "User->forAll(u | u.payment->size() >= 1)"
+      "name": "PositivePaymentAmount",
+      "constraint": "self.amount > 0"
     }
   ],
   "preconditions": [
     {
-      "name": "Pre_BookingInitialization",
-      "on": "BookingSystem",
-      "constraint": "TripDetails->exists(d | d.availability = true) and User.allInstances()->size() > 0"
+      "name": "UserHasActiveBookings",
+      "on": "User",
+      "constraint": "self.bookings->exists(b | b.status = 'active')"
     },
     {
-      "name": "Pre_PaymentProcessing",
-      "on": "PaymentGateway",
-      "constraint": "Booking->exists(b | b.status = 'Pending' and TripDetails.availability = true)"
+      "name": "DestinationExists",
+      "on": "Destination",
+      "constraint": "self.bookings->notEmpty()"
     },
     {
-      "name": "Pre_RefundRequest",
-      "on": "RefundSystem",
-      "constraint": "Booking->exists(b | b.status = 'Cancelled' and Payment.paymentStatus = 'Completed')"
+      "name": "ValidCancellationReason",
+      "on": "Cancellation",
+      "constraint": "self.reason.size() > 0"
     }
   ],
   "postconditions": [
     {
-      "name": "Post_BookingConfirmed",
-      "on": "BookingSystem",
-      "constraint": "Booking->select(b | b.status = 'Confirmed')->forAll(b | Payment.paymentStatus = 'Completed')"
+      "name": "BookingMarkedAsCancelled",
+      "on": "Cancellation",
+      "constraint": "self.booking.status = 'cancelled'"
     },
     {
-      "name": "Post_PaymentCompleted",
-      "on": "PaymentGateway",
-      "constraint": "Payment->select(p | p.paymentStatus = 'Completed')->forAll(p | p.amount = p.booking.trip.price)"
+      "name": "PaymentStatusUpdated",
+      "on": "Payment",
+      "constraint": "self.status = 'completed' or self.status = 'failed'"
     },
     {
-      "name": "Post_RefundIssued",
-      "on": "RefundSystem",
-      "constraint": "Refund->select(r | r.refundStatus = 'Processed')->forAll(r | r.amount = r.booking.payment.amount)"
+      "name": "UserReviewAssociated",
+      "on": "Review",
+      "constraint": "self.user.reviews->includes(self)"
     }
   ]
 }

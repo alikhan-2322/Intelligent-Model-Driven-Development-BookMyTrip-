@@ -1,63 +1,71 @@
-Based on the provided use-cases and data model for the BookMyTrip application, here is a list of possible REST API endpoints:
+Certainly! Below is a list of REST API endpoints for the BookMyTrip application, aligned with your use cases and data model:
 
-1. **Trips**
+### Trip Endpoints
+1. **GET /trips**
+   - Retrieve a list of available trips.
+   
+2. **GET /trips/{id}**
+   - Retrieve detailed information about a specific trip.
+   
+3. **GET /trips/search**
+   - Search for trips based on criteria like destination, date, and price.
 
-   - **GET /trips**
-     - Retrieve a list of all available trips.
+### User Endpoints
+4. **GET /users**
+   - Retrieve a list of users.
+   
+5. **GET /users/{id}**
+   - Retrieve detailed information about a specific user.
+   
+6. **POST /users**
+   - Create a new user account.
+   
+7. **PUT /users/{id}**
+   - Update information for an existing user.
+   
+8. **DELETE /users/{id}**
+   - Remove a user account from the system.
 
-   - **GET /trips/{id}**
-     - Retrieve details of a specific trip by its unique identifier.
+### Booking Endpoints
+9. **GET /bookings**
+   - Retrieve a list of all bookings.
+   
+10. **GET /bookings/{id}**
+    - Get details about a specific booking.
+    
+11. **POST /bookings**
+    - Create a new booking for a trip.
+    
+12. **PUT /bookings/{id}/cancel**
+    - Cancel a specific booking.
+    
+13. **PUT /bookings/{id}/confirm**
+    - Confirm a pending booking.
 
-   - **GET /trips/search**
-     - Search for trips based on destination, date range, or other criteria.
+### Payment Endpoints
+14. **GET /payments**
+    - Retrieve a list of all payment transactions.
+    
+15. **GET /payments/{id}**
+    - Get details about a specific payment transaction.
+    
+16. **POST /payments**
+    - Record a payment for a booking.
 
-2. **Comparing Prices**
+### Feedback Endpoints
+17. **GET /feedbacks**
+    - Retrieve a list of all feedback entries.
+    
+18. **GET /feedbacks/{id}**
+    - Get details about a specific feedback entry.
+    
+19. **POST /feedbacks**
+    - Submit feedback for a trip.
+    
+20. **PUT /feedbacks/{id}**
+    - Update an existing feedback entry.
+    
+21. **DELETE /feedbacks/{id}**
+    - Remove a feedback entry from the system.
 
-   - **GET /trips/comparePrices**
-     - Compare prices of trips based on specific criteria like destination or date range.
-
-3. **Bookings**
-
-   - **POST /bookings**
-     - Make a booking for a trip.
-
-   - **GET /bookings**
-     - Retrieve a list of all bookings made by the user.
-
-   - **GET /bookings/{id}**
-     - Retrieve details of a specific booking by its unique identifier.
-
-   - **DELETE /bookings/{id}**
-     - Cancel an existing booking by its unique identifier.
-
-4. **Users**
-
-   - **GET /users/{id}**
-     - Retrieve details of a specific user by their unique identifier.
-
-   - **POST /users**
-     - Register a new user.
-
-   - **PUT /users/{id}**
-     - Update details of an existing user.
-
-5. **Payments**
-
-   - **POST /payments**
-     - Process a payment for a booking.
-
-   - **GET /payments/{id}**
-     - Retrieve details of a specific payment by its unique identifier.
-
-6. **Reviews**
-
-   - **POST /reviews**
-     - Submit a review for a trip.
-
-   - **GET /reviews/trip/{tripId}**
-     - Retrieve all reviews for a specific trip by its unique identifier.
-
-   - **GET /reviews/user/{userId}**
-     - Retrieve all reviews submitted by a specific user.
-
-These endpoints encompass functionality for searching trips, booking trips, and managing user and payment information, as well as submitting and retrieving reviews.
+These endpoints cover the core functionality of the BookMyTrip application, including searching and booking trips, user management, payments, and trip feedback.

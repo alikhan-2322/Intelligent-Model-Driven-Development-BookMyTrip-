@@ -1,0 +1,10 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtualenvs
+.venv/
+env/
+
+# Secret environment file
+.env

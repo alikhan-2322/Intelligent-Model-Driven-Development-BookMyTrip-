@@ -3,12 +3,15 @@
 import json
 from openai import OpenAI
 from openai.types.chat import ChatCompletion
+from dotenv import load_dotenv
+import os
 
-# ── HARD‐CODED LAB TOKEN ──
-# Paste the same ChatFire token you used in Task 1 (verified with /models)
-API_KEY = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
-if not API_KEY.startswith("sk-"):
-    raise RuntimeError("Please replace API_KEY with your verified lab‐provided token.")
+# read .env from project root
+load_dotenv()
+API_KEY = os.getenv("BOOKMYTRIP_API_KEY")
+if not API_KEY or not API_KEY.startswith("sk-"):
+    raise RuntimeError("Please set BOOKMYTRIP_API_KEY in your .env file")
+
 
 # ── BASE_URL FROM LAB INSTRUCTIONS ──
 BASE_URL = "https://api.chatfire.cn/v1"

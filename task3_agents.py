@@ -4,6 +4,8 @@ import asyncio
 import json
 from pathlib import Path
 from openai_core.async_openai import AsyncOpenAI
+from dotenv import load_dotenv
+import os
 # ── 1) your real trips and tools ──
 from trips_data import TRIPS
 from booking_tools import (
@@ -13,7 +15,10 @@ from booking_tools import (
 )
 
 # ── 2) OpenAI / ChatFire setup ──
-API_KEY  = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
+load_dotenv()
+API_KEY = os.getenv("BOOKMYTRIP_API_KEY")
+if not API_KEY or not API_KEY.startswith("sk-"):
+    raise RuntimeError("Please set BOOKMYTRIP_API_KEY in your .env file")
 BASE_URL = "https://api.chatfire.cn/v1"
 if not API_KEY.startswith("sk-"):
     raise RuntimeError("Please set API_KEY to your lab-provided sk-token.")

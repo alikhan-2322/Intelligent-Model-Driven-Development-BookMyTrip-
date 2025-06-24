@@ -11,8 +11,14 @@ from providers.openai_provider import OpenAIProvider
 from agents.tool        import function_tool
 from agents.agent       import Agent
 from agents.run         import Runner, RunConfig
+from dotenv import load_dotenv
+import os
 
-API_KEY  = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
+
+load_dotenv()
+API_KEY = os.getenv("BOOKMYTRIP_API_KEY")
+if not API_KEY or not API_KEY.startswith("sk-"):
+    raise RuntimeError("Please set BOOKMYTRIP_API_KEY in your .env file")
 BASE_URL = "https://api.chatfire.cn/v1"
 
 async def interactive():

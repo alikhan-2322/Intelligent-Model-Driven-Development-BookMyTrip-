@@ -1,40 +1,36 @@
-Certainly! Here's a simple data model for the BookMyTrip application, featuring key entities and their fields:
+Below is a simple data model for the BookMyTrip application, including entities and their key fields:
 
 - **Trip**
-  - **id**: Unique identifier for the trip.
-  - **destination**: Location where the trip is going.
-  - **startDate**: Date when the trip starts.
-  - **endDate**: Date when the trip ends.
-  - **price**: Cost of the trip.
-  - **availableSeats**: Number of seats available for booking.
+  - `id`: Unique identifier for the trip.
+  - `destination`: Location where the trip is headed.
+  - `startDate`: Date when the trip begins.
+  - `endDate`: Date when the trip ends.
+  - `price`: Cost of the trip.
 
 - **Booking**
-  - **id**: Unique identifier for the booking.
-  - **userId**: Identifier for the user who made the booking.
-  - **tripId**: Identifier for the trip being booked.
-  - **status**: Current status of the booking (e.g., confirmed, canceled).
-  - **bookingDate**: Date when the booking was made.
+  - `id`: Unique identifier for the booking.
+  - `userId`: Identifier for the user who made the booking.
+  - `tripId`: Identifier for the trip being booked.
+  - `status`: Current status of the booking (e.g., confirmed, canceled, pending).
 
 - **User**
-  - **id**: Unique identifier for the user.
-  - **name**: Full name of the user.
-  - **email**: Email address of the user.
-  - **phoneNumber**: Contact number of the user.
-  - **membershipStatus**: Indicates membership level/status (e.g., regular, premium).
+  - `id`: Unique identifier for the user.
+  - `name`: Name of the user.
+  - `email`: Email address of the user.
+  - `phoneNumber`: Contact phone number for the user.
 
 - **Payment**
-  - **id**: Unique identifier for the payment.
-  - **bookingId**: Identifier for the booking associated with this payment.
-  - **amount**: Total amount paid.
-  - **paymentDate**: Date when the payment was processed.
-  - **paymentMethod**: Method of payment used (e.g., credit card, PayPal).
+  - `id`: Unique identifier for the payment transaction.
+  - `bookingId`: Identifier for the booking associated with this payment.
+  - `amount`: Amount paid for the booking.
+  - `date`: Date when the payment was made.
+  - `method`: Payment method used (e.g., credit card, PayPal).
 
-- **Review**
-  - **id**: Unique identifier for the review.
-  - **userId**: Identifier of the user who wrote the review.
-  - **tripId**: Identifier of the trip being reviewed.
-  - **rating**: Numeric rating given to the trip.
-  - **comments**: Text comments from the user about the trip.
-  - **reviewDate**: Date when the review was submitted.
+- **Feedback**
+  - `id`: Unique identifier for the feedback entry.
+  - `userId`: Identifier for the user providing feedback.
+  - `tripId`: Identifier for the trip being reviewed.
+  - `rating`: Numeric rating given to the trip.
+  - `comments`: User's comments on the trip experience.
 
-These entities enable core functionalities such as searching for trips, booking and canceling trips, managing user information, processing payments, and collecting user feedback through reviews.
+This model captures essential aspects of the booking process—from trips and user details to payments and feedback, allowing for a streamlined management of the core operations within the BookMyTrip application.

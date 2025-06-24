@@ -1,12 +1,15 @@
 # task1_rest.py
 import json
 import requests
+from dotenv import load_dotenv
+import os
 
 # ── HARD‐CODED LAB TOKEN ──
 # Make sure this is the exact key you verified with /models (no extra spaces).
-api_key = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
-if not api_key.startswith("sk-"):
-    raise RuntimeError("Please replace api_key with your verified lab‐provided token.")
+load_dotenv()
+API_KEY = os.getenv("BOOKMYTRIP_API_KEY")
+if not API_KEY or not API_KEY.startswith("sk-"):
+    raise RuntimeError("Please set BOOKMYTRIP_API_KEY in your .env file")
 
 # ── BASE_URL FROM LAB INSTRUCTIONS ──
 BASE_URL = "https://api.chatfire.cn/v1"
@@ -14,7 +17,7 @@ endpoint = f"{BASE_URL}/chat/completions"
 
 # ── Section 9.1: Must use 'Authorization: Bearer <api_key>' ──
 headers = {
-    "Authorization": f"Bearer {api_key}",
+    "Authorization": f"Bearer {API_KEY}",
     "Content-Type": "application/json"
 }
 

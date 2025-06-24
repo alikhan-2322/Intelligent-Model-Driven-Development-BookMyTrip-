@@ -1,83 +1,68 @@
 ```json
 [
   {
-    "usecase": "BrowseTrips",
-    "lifelines": ["User", "TripCatalog"],
+    "usecase": "Select Destinations",
+    "lifelines": ["User", "Destination System"],
     "messages": [
-      { "from_role": "User", "to_role": "TripCatalog", "action": "requestAvailableTrips" },
-      { "from_role": "TripCatalog", "to_role": "User", "action": "returnAvailableTrips" }
+      { "from_role": "User", "to_role": "Destination System", "action": "Request Destinations" },
+      { "from_role": "Destination System", "to_role": "User", "action": "Provide Destinations" }
     ]
   },
   {
-    "usecase": "SearchTrips",
-    "lifelines": ["User", "TripCatalog"],
+    "usecase": "View Trip Details",
+    "lifelines": ["User", "Trip System"],
     "messages": [
-      { "from_role": "User", "to_role": "TripCatalog", "action": "searchTrips" },
-      { "from_role": "TripCatalog", "to_role": "User", "action": "returnSearchResults" }
+      { "from_role": "User", "to_role": "Trip System", "action": "Request Trip Details" },
+      { "from_role": "Trip System", "to_role": "User", "action": "Provide Trip Details" }
     ]
   },
   {
-    "usecase": "ViewTripDetails",
-    "lifelines": ["User", "TripCatalog", "TripDetails"],
+    "usecase": "Book Trip",
+    "lifelines": ["User", "Booking System"],
     "messages": [
-      { "from_role": "User", "to_role": "TripCatalog", "action": "selectTrip" },
-      { "from_role": "TripCatalog", "to_role": "TripDetails", "action": "fetchTripDetails" },
-      { "from_role": "TripDetails", "to_role": "User", "action": "displayTripDetails" }
+      { "from_role": "User", "to_role": "Booking System", "action": "Initiate Booking" },
+      { "from_role": "Booking System", "to_role": "User", "action": "Confirm Destination Selection" },
+      { "from_role": "Booking System", "to_role": "User", "action": "Provide Booking Confirmation" }
     ]
   },
   {
-    "usecase": "BookTrip",
-    "lifelines": ["User", "TripCatalog", "TripDetails", "BookingSystem"],
+    "usecase": "Confirm Booking",
+    "lifelines": ["User", "Confirmation System"],
     "messages": [
-      { "from_role": "User", "to_role": "TripDetails", "action": "initiateBooking" },
-      { "from_role": "TripDetails", "to_role": "BookingSystem", "action": "createBooking" },
-      { "from_role": "BookingSystem", "to_role": "User", "action": "confirmBooking" }
+      { "from_role": "User", "to_role": "Confirmation System", "action": "Request Booking Confirmation" },
+      { "from_role": "Confirmation System", "to_role": "User", "action": "Send Booking Confirmation" }
     ]
   },
   {
-    "usecase": "CancelTripBooking",
-    "lifelines": ["User", "BookingSystem"],
+    "usecase": "Make Payment",
+    "lifelines": ["User", "Payment System"],
     "messages": [
-      { "from_role": "User", "to_role": "BookingSystem", "action": "requestCancellation" },
-      { "from_role": "BookingSystem", "to_role": "User", "action": "confirmCancellation" }
+      { "from_role": "User", "to_role": "Payment System", "action": "Initiate Payment" },
+      { "from_role": "Payment System", "to_role": "User", "action": "Confirm Payment Receipt" }
     ]
   },
   {
-    "usecase": "ManageBookings",
-    "lifelines": ["User", "BookingSystem"],
+    "usecase": "Cancel Booking",
+    "lifelines": ["User", "Cancellation System"],
     "messages": [
-      { "from_role": "User", "to_role": "BookingSystem", "action": "viewBookings" },
-      { "from_role": "BookingSystem", "to_role": "User", "action": "displayBookings" },
-      { "from_role": "User", "to_role": "BookingSystem", "action": "modifyBooking" },
-      { "from_role": "BookingSystem", "to_role": "User", "action": "confirmModification" },
-      { "from_role": "User", "to_role": "BookingSystem", "action": "cancelBooking" },
-      { "from_role": "BookingSystem", "to_role": "User", "action": "confirmCancellation" }
+      { "from_role": "User", "to_role": "Cancellation System", "action": "Request Booking Cancellation" },
+      { "from_role": "Cancellation System", "to_role": "User", "action": "Send Cancellation Confirmation" }
     ]
   },
   {
-    "usecase": "MakePayment",
-    "lifelines": ["User", "PaymentGateway"],
+    "usecase": "Generate Itinerary",
+    "lifelines": ["User", "Itinerary System"],
     "messages": [
-      { "from_role": "User", "to_role": "PaymentGateway", "action": "initiatePayment" },
-      { "from_role": "PaymentGateway", "to_role": "User", "action": "confirmPayment" }
+      { "from_role": "User", "to_role": "Itinerary System", "action": "Request Itinerary Generation" },
+      { "from_role": "Itinerary System", "to_role": "User", "action": "Provide Generated Itinerary" }
     ]
   },
   {
-    "usecase": "RequestRefund",
-    "lifelines": ["User", "RefundSystem"],
+    "usecase": "Review Trip",
+    "lifelines": ["User", "Review System"],
     "messages": [
-      { "from_role": "User", "to_role": "RefundSystem", "action": "requestRefund" },
-      { "from_role": "RefundSystem", "to_role": "User", "action": "confirmRefund" }
-    ]
-  },
-  {
-    "usecase": "ManageUserAccount",
-    "lifelines": ["User", "AccountSystem"],
-    "messages": [
-      { "from_role": "User", "to_role": "AccountSystem", "action": "updateAccountDetails" },
-      { "from_role": "AccountSystem", "to_role": "User", "action": "confirmUpdate" },
-      { "from_role": "User", "to_role": "AccountSystem", "action": "viewAccountDetails" },
-      { "from_role": "AccountSystem", "to_role": "User", "action": "displayAccountDetails" }
+      { "from_role": "User", "to_role": "Review System", "action": "Submit Trip Review" },
+      { "from_role": "Review System", "to_role": "User", "action": "Confirm Review Submission" }
     ]
   }
 ]

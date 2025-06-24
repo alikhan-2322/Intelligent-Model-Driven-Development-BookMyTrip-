@@ -1,4 +1,4 @@
-Here is a list of core use-cases for a BookMyTrip application:
+Certainly! Below is a numbered list of core use-case names for a BookMyTrip application:
 
 1. SearchTrips
 2. CompareTripPrices

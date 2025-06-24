@@ -1,26 +1,26 @@
 {
-  "id": "chatcmpl-BlzsLo2b0NuLyqiWuE3O0VhuRlHwd",
+  "id": "chatcmpl-Bm2U8QucM9qYPps8uYuTUGyFnGdWO",
   "choices": [
     {
       "finish_reason": "stop",
       "index": 0,
       "logprobs": null,
       "message": {
-        "content": "Certainly! Here's a simple data model for the BookMyTrip application, featuring key entities and their fields:\n\n- **Trip**\n  - **id**: Unique identifier for the trip.\n  - **destination**: Location where the trip is going.\n  - **startDate**: Date when the trip starts.\n  - **endDate**: Date when the trip ends.\n  - **price**: Cost of the trip.\n  - **availableSeats**: Number of seats available for booking.\n\n- **Booking**\n  - **id**: Unique identifier for the booking.\n  - **userId**: Identifier for the user who made the booking.\n  - **tripId**: Identifier for the trip being booked.\n  - **status**: Current status of the booking (e.g., confirmed, canceled).\n  - **bookingDate**: Date when the booking was made.\n\n- **User**\n  - **id**: Unique identifier for the user.\n  - **name**: Full name of the user.\n  - **email**: Email address of the user.\n  - **phoneNumber**: Contact number of the user.\n  - **membershipStatus**: Indicates membership level/status (e.g., regular, premium).\n\n- **Payment**\n  - **id**: Unique identifier for the payment.\n  - **bookingId**: Identifier for the booking associated with this payment.\n  - **amount**: Total amount paid.\n  - **paymentDate**: Date when the payment was processed.\n  - **paymentMethod**: Method of payment used (e.g., credit card, PayPal).\n\n- **Review**\n  - **id**: Unique identifier for the review.\n  - **userId**: Identifier of the user who wrote the review.\n  - **tripId**: Identifier of the trip being reviewed.\n  - **rating**: Numeric rating given to the trip.\n  - **comments**: Text comments from the user about the trip.\n  - **reviewDate**: Date when the review was submitted.\n\nThese entities enable core functionalities such as searching for trips, booking and canceling trips, managing user information, processing payments, and collecting user feedback through reviews.",
+        "content": "Below is a simple data model for the BookMyTrip application, including entities and their key fields:\n\n- **Trip**\n  - `id`: Unique identifier for the trip.\n  - `destination`: Location where the trip is headed.\n  - `startDate`: Date when the trip begins.\n  - `endDate`: Date when the trip ends.\n  - `price`: Cost of the trip.\n\n- **Booking**\n  - `id`: Unique identifier for the booking.\n  - `userId`: Identifier for the user who made the booking.\n  - `tripId`: Identifier for the trip being booked.\n  - `status`: Current status of the booking (e.g., confirmed, canceled, pending).\n\n- **User**\n  - `id`: Unique identifier for the user.\n  - `name`: Name of the user.\n  - `email`: Email address of the user.\n  - `phoneNumber`: Contact phone number for the user.\n\n- **Payment**\n  - `id`: Unique identifier for the payment transaction.\n  - `bookingId`: Identifier for the booking associated with this payment.\n  - `amount`: Amount paid for the booking.\n  - `date`: Date when the payment was made.\n  - `method`: Payment method used (e.g., credit card, PayPal).\n\n- **Feedback**\n  - `id`: Unique identifier for the feedback entry.\n  - `userId`: Identifier for the user providing feedback.\n  - `tripId`: Identifier for the trip being reviewed.\n  - `rating`: Numeric rating given to the trip.\n  - `comments`: User's comments on the trip experience.\n\nThis model captures essential aspects of the booking process\u2014from trips and user details to payments and feedback, allowing for a streamlined management of the core operations within the BookMyTrip application.",
         "refusal": null,
         "role": "assistant",
         "annotations": []
       }
     }
   ],
-  "created": 1750778965,
+  "created": 1750788996,
   "model": "gpt-4o-2024-08-06",
   "object": "chat.completion",
   "system_fingerprint": "fp_ee1d74bde0",
   "usage": {
-    "completion_tokens": 449,
-    "prompt_tokens": 133,
-    "total_tokens": 582,
+    "completion_tokens": 368,
+    "prompt_tokens": 136,
+    "total_tokens": 504,
     "completion_tokens_details": {
       "accepted_prediction_tokens": 0,
       "audio_tokens": 0,
