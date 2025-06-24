@@ -40,7 +40,7 @@ This lab explores three progressive methods for automated requirements modeling 
   - `usecases_raw.json`: full API response  
 
 > **Screenshot**  
-> *(Place Task1_Rest/screenshots/usecases.png here)*
+> *![Task 1 Console](lab4_images/task1%20console.png)*
 
 ---
 
@@ -60,7 +60,7 @@ This lab explores three progressive methods for automated requirements modeling 
   - `usecases_raw.json`: SDK-formatted JSON  
 
 > **Screenshot**  
-> *(Place Task2_SDK/screenshots/sdk_usecases.png here)*
+> *![Task 2 Console](lab4_images/task2%20console.png)*
 
 ---
 
@@ -98,11 +98,12 @@ After generating all four DSL artifacts, the script presents a console menu to:
 5. Regenerate all DSL artifacts on demand  
 
 > **Screenshots**  
-> - UseCaseDSL: *(Task3_Agents/screenshots/UseCaseDSL.png)*  
-> - SSDDSL:     *(Task3_Agents/screenshots/SSDDSL.png)*  
-> - ClassDSL:   *(Task3_Agents/screenshots/ClassDSL.png)*  
-> - OCLDSL:     *(Task3_Agents/screenshots/OCLDSL.png)*  
-> - Interactive CLI: *(Task3_Agents/screenshots/interactive_cli.png)*
+> -  *![Task 3 Console](lab4_images/task3%20console.png)*  
+> -      *![Task 3 Console](lab4_images/Task3%20imports.png)*  
+> -    *![Task 3 Console](lab4_images/Task3%20Define%20agent.png)*  
+> -      *![Task 3 Console](lab4_images/Task3%20fuction_tool.png)*  
+> -  *![Task 3 Console](lab4_images/Task3%20asyncio.run.png)*
+> -  [Click here to view Task 3 video](lab4_images/task3%20video.mp4)
 
 ---
 
