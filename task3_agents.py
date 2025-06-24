@@ -13,7 +13,7 @@ from booking_tools import (
 )
 
 # ── 2) OpenAI / ChatFire setup ──
-API_KEY  = "sk-zO8exlBicZh7nJeZn5GuC5X9SPuVrZzXoGyOW0i9BFvN62ON"
+API_KEY  = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
 BASE_URL = "https://api.chatfire.cn/v1"
 if not API_KEY.startswith("sk-"):
     raise RuntimeError("Please set API_KEY to your lab-provided sk-token.")

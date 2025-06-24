@@ -3,7 +3,7 @@
 import asyncio
 import json
 
-from task3_agents          import build_models
+from task3_agents import generate_dsl_artifacts as build_models
 from trips_data         import TRIPS
 from booking_tools      import search_trips, book_trip, cancel_booking
 from openai_core.async_openai import AsyncOpenAI
@@ -12,7 +12,7 @@ from agents.tool        import function_tool
 from agents.agent       import Agent
 from agents.run         import Runner, RunConfig
 
-API_KEY  = "sk-zO8exlBicZh7nJeZn5GuC5X9SPuVrZzXoGyOW0i9BFvN62ON"
+API_KEY  = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
 BASE_URL = "https://api.chatfire.cn/v1"
 
 async def interactive():

@@ -9,25 +9,18 @@
         { "name": "email", "type": "String" }
       ],
       "relationships": [
-        { "type": "association", "target": "Booking", "multiplicity": "1..*" }
+        { "type": "association", "target": "Booking", "multiplicity": "1..*" },
+        { "type": "association", "target": "Payment", "multiplicity": "1..*" },
+        { "type": "association", "target": "Account", "multiplicity": "1" }
       ]
     },
     {
-      "name": "TripService",
+      "name": "TripCatalog",
       "attributes": [
-        { "name": "serviceId", "type": "String" }
+        { "name": "trips", "type": "List<Trip>" }
       ],
       "relationships": [
-        { "type": "association", "target": "Trip", "multiplicity": "1..*" }
-      ]
-    },
-    {
-      "name": "PaymentService",
-      "attributes": [
-        { "name": "serviceId", "type": "String" }
-      ],
-      "relationships": [
-        { "type": "association", "target": "Payment", "multiplicity": "1..*" }
+        { "type": "association", "target": "Trip", "multiplicity": "0..*" }
       ]
     },
     {
@@ -35,22 +28,47 @@
       "attributes": [
         { "name": "tripId", "type": "String" },
         { "name": "destination", "type": "String" },
-        { "name": "date", "type": "Date" },
         { "name": "price", "type": "Double" }
       ],
       "relationships": [
-        { "type": "association", "target": "Booking", "multiplicity": "0..*" }
+        { "type": "association", "target": "TripCatalog", "multiplicity": "1" }
+      ]
+    },
+    {
+      "name": "TripDetails",
+      "attributes": [
+        { "name": "detailsId", "type": "String" },
+        { "name": "description", "type": "String" },
+        { "name": "availability", "type": "Boolean" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "Trip", "multiplicity": "1" }
+      ]
+    },
+    {
+      "name": "BookingSystem",
+      "attributes": [],
+      "relationships": [
+        { "type": "association", "target": "Booking", "multiplicity": "1..*" }
       ]
     },
     {
       "name": "Booking",
       "attributes": [
         { "name": "bookingId", "type": "String" },
+        { "name": "trip", "type": "Trip" },
         { "name": "status", "type": "String" }
       ],
       "relationships": [
-        { "type": "association", "target": "Trip", "multiplicity": "1" },
+        { "type": "association", "target": "User", "multiplicity": "1" },
         { "type": "association", "target": "Payment", "multiplicity": "0..1" }
+      ]
+    },
+    {
+      "name": "PaymentGateway",
+      "attributes": [],
+      "relationships": [
+        { "type": "association", "target": "Payment", "multiplicity": "1..*" }
       ]
     },
     {
@@ -58,10 +76,46 @@
       "attributes": [
         { "name": "paymentId", "type": "String" },
         { "name": "amount", "type": "Double" },
-        { "name": "status", "type": "String" }
+        { "name": "paymentStatus", "type": "String" }
       ],
       "relationships": [
-        { "type": "association", "target": "Booking", "multiplicity": "1" }
+        { "type": "association", "target": "Booking", "multiplicity": "1" },
+        { "type": "association", "target": "User", "multiplicity": "1" }
+      ]
+    },
+    {
+      "name": "RefundSystem",
+      "attributes": [],
+      "relationships": [
+        { "type": "association", "target": "Refund", "multiplicity": "1..*" }
+      ]
+    },
+    {
+      "name": "Refund",
+      "attributes": [
+        { "name": "refundId", "type": "String" },
+        { "name": "amount", "type": "Double" },
+        { "name": "refundStatus", "type": "String" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "User", "multiplicity": "1" }
+      ]
+    },
+    {
+      "name": "AccountSystem",
+      "attributes": [],
+      "relationships": [
+        { "type": "association", "target": "Account", "multiplicity": "1..*" }
+      ]
+    },
+    {
+      "name": "Account",
+      "attributes": [
+        { "name": "accountId", "type": "String" },
+        { "name": "accountStatus", "type": "String" }
+      ],
+      "relationships": [
+        { "type": "association", "target": "User", "multiplicity": "1" }
       ]
     }
   ]

@@ -3,59 +3,49 @@
   "systemName": "BookMyTrip",
   "usecases": [
     {
-      "name": "Search Trips",
+      "name": "BrowseTrips",
       "includes": [],
-      "extends": []
+      "extends": null
     },
     {
-      "name": "View Trip Details",
-      "includes": ["Search Trips"],
-      "extends": []
+      "name": "SearchTrips",
+      "includes": ["BrowseTrips"],
+      "extends": null
     },
     {
-      "name": "Book Trip",
-      "includes": ["View Trip Details"],
-      "extends": []
+      "name": "ViewTripDetails",
+      "includes": ["BrowseTrips"],
+      "extends": null
     },
     {
-      "name": "Cancel Booking",
-      "includes": ["Book Trip"],
-      "extends": []
+      "name": "BookTrip",
+      "includes": ["ViewTripDetails"],
+      "extends": null
     },
     {
-      "name": "Manage Booking",
-      "includes": ["Book Trip", "Cancel Booking"],
-      "extends": []
+      "name": "CancelTripBooking",
+      "includes": ["BookTrip"],
+      "extends": null
     },
     {
-      "name": "Make Payment",
-      "includes": ["Book Trip"],
-      "extends": []
+      "name": "ManageBookings",
+      "includes": ["BookTrip", "CancelTripBooking"],
+      "extends": null
     },
     {
-      "name": "Receive Confirmation",
-      "includes": ["Make Payment"],
-      "extends": []
+      "name": "MakePayment",
+      "includes": ["BookTrip"],
+      "extends": null
     },
     {
-      "name": "View Itinerary",
-      "includes": ["Receive Confirmation"],
-      "extends": []
+      "name": "RequestRefund",
+      "includes": ["CancelTripBooking"],
+      "extends": null
     },
     {
-      "name": "Search by Destination",
-      "includes": ["Search Trips"],
-      "extends": []
-    },
-    {
-      "name": "Search by Date",
-      "includes": ["Search Trips"],
-      "extends": []
-    },
-    {
-      "name": "Search by Price",
-      "includes": ["Search Trips"],
-      "extends": []
+      "name": "ManageUserAccount",
+      "includes": [],
+      "extends": null
     }
   ]
 }

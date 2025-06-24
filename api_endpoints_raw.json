@@ -1,52 +1,26 @@
 {
-  "id": "chatcmpl-BekYV7DKQzgutMnYxz7whJMCsxLam",
+  "id": "chatcmpl-BlzsRxmcebG8TWYF20nYe9keiCacN",
   "choices": [
     {
       "finish_reason": "stop",
       "index": 0,
       "logprobs": null,
       "message": {
-        "content": "Certainly! Below is a list of REST API endpoints for the BookMyTrip application, based on the provided use-cases and data model:\n\n### Trip Endpoints\n\n1. **GET /trips**\n   - **Description**: Retrieve a list of all available trips.\n\n2. **GET /trips/{id}**\n   - **Description**: Retrieve details of a specific trip by its ID.\n\n3. **GET /trips/search**\n   - **Description**: Search for trips based on criteria such as destination, start date, and end date.\n\n4. **GET /trips/compare**\n   - **Description**: Compare prices of different trips based on specified criteria.\n\n### Booking Endpoints\n\n5. **POST /bookings**\n   - **Description**: Create a new booking for a trip.\n\n6. **GET /bookings/{id}**\n   - **Description**: Retrieve details of a specific booking by its ID.\n\n7. **DELETE /bookings/{id}**\n   - **Description**: Cancel a specific booking by its ID.\n\n### User Endpoints\n\n8. **GET /users**\n   - **Description**: Retrieve a list of all users.\n\n9. **GET /users/{id}**\n   - **Description**: Retrieve details of a specific user by their ID.\n\n10. **POST /users**\n    - **Description**: Create a new user account.\n\n11. **PUT /users/{id}**\n    - **Description**: Update details of a specific user by their ID.\n\n### Payment Endpoints\n\n12. **POST /payments**\n    - **Description**: Process a payment for a booking.\n\n13. **GET /payments/{id}**\n    - **Description**: Retrieve details of a specific payment transaction by its ID.\n\n### Review Endpoints\n\n14. **POST /reviews**\n    - **Description**: Submit a review for a trip.\n\n15. **GET /reviews/trip/{tripId}**\n    - **Description**: Retrieve all reviews for a specific trip.\n\n16. **GET /reviews/user/{userId}**\n    - **Description**: Retrieve all reviews submitted by a specific user.\n\nThese endpoints provide a comprehensive interface for interacting with the BookMyTrip application, covering trip management, booking operations, user management, payment processing, and review submissions.",
+        "content": "Based on the provided use-cases and data model for the BookMyTrip application, here is a list of possible REST API endpoints:\n\n1. **Trips**\n\n   - **GET /trips**\n     - Retrieve a list of all available trips.\n\n   - **GET /trips/{id}**\n     - Retrieve details of a specific trip by its unique identifier.\n\n   - **GET /trips/search**\n     - Search for trips based on destination, date range, or other criteria.\n\n2. **Comparing Prices**\n\n   - **GET /trips/comparePrices**\n     - Compare prices of trips based on specific criteria like destination or date range.\n\n3. **Bookings**\n\n   - **POST /bookings**\n     - Make a booking for a trip.\n\n   - **GET /bookings**\n     - Retrieve a list of all bookings made by the user.\n\n   - **GET /bookings/{id}**\n     - Retrieve details of a specific booking by its unique identifier.\n\n   - **DELETE /bookings/{id}**\n     - Cancel an existing booking by its unique identifier.\n\n4. **Users**\n\n   - **GET /users/{id}**\n     - Retrieve details of a specific user by their unique identifier.\n\n   - **POST /users**\n     - Register a new user.\n\n   - **PUT /users/{id}**\n     - Update details of an existing user.\n\n5. **Payments**\n\n   - **POST /payments**\n     - Process a payment for a booking.\n\n   - **GET /payments/{id}**\n     - Retrieve details of a specific payment by its unique identifier.\n\n6. **Reviews**\n\n   - **POST /reviews**\n     - Submit a review for a trip.\n\n   - **GET /reviews/trip/{tripId}**\n     - Retrieve all reviews for a specific trip by its unique identifier.\n\n   - **GET /reviews/user/{userId}**\n     - Retrieve all reviews submitted by a specific user.\n\nThese endpoints encompass functionality for searching trips, booking trips, and managing user and payment information, as well as submitting and retrieving reviews.",
         "refusal": null,
         "role": "assistant",
         "annotations": []
-      },
-      "content_filter_results": {
-        "hate": {
-          "filtered": false,
-          "severity": "safe"
-        },
-        "protected_material_code": {
-          "filtered": false,
-          "detected": false
-        },
-        "protected_material_text": {
-          "filtered": false,
-          "detected": false
-        },
-        "self_harm": {
-          "filtered": false,
-          "severity": "safe"
-        },
-        "sexual": {
-          "filtered": false,
-          "severity": "safe"
-        },
-        "violence": {
-          "filtered": false,
-          "severity": "safe"
-        }
       }
     }
   ],
-  "created": 1749051779,
+  "created": 1750778971,
   "model": "gpt-4o-2024-08-06",
   "object": "chat.completion",
   "system_fingerprint": "fp_ee1d74bde0",
   "usage": {
-    "completion_tokens": 479,
-    "prompt_tokens": 490,
-    "total_tokens": 969,
+    "completion_tokens": 425,
+    "prompt_tokens": 556,
+    "total_tokens": 981,
     "completion_tokens_details": {
       "accepted_prediction_tokens": 0,
       "audio_tokens": 0,
@@ -57,32 +31,5 @@
       "audio_tokens": 0,
       "cached_tokens": 0
     }
-  },
-  "prompt_filter_results": [
-    {
-      "prompt_index": 0,
-      "content_filter_results": {
-        "hate": {
-          "filtered": false,
-          "severity": "safe"
-        },
-        "jailbreak": {
-          "filtered": false,
-          "detected": false
-        },
-        "self_harm": {
-          "filtered": false,
-          "severity": "safe"
-        },
-        "sexual": {
-          "filtered": false,
-          "severity": "safe"
-        },
-        "violence": {
-          "filtered": false,
-          "severity": "safe"
-        }
-      }
-    }
-  ]
+  }
 }

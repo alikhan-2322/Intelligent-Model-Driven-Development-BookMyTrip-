@@ -1,35 +1,40 @@
-Certainly! Below is a simple data model for the BookMyTrip application, including key entities and their fields:
+Certainly! Here's a simple data model for the BookMyTrip application, featuring key entities and their fields:
 
 - **Trip**
   - **id**: Unique identifier for the trip.
-  - **destination**: Location where the trip is headed.
-  - **startDate**: Date when the trip begins.
+  - **destination**: Location where the trip is going.
+  - **startDate**: Date when the trip starts.
   - **endDate**: Date when the trip ends.
   - **price**: Cost of the trip.
+  - **availableSeats**: Number of seats available for booking.
 
 - **Booking**
   - **id**: Unique identifier for the booking.
   - **userId**: Identifier for the user who made the booking.
-  - **tripId**: Identifier for the trip that is booked.
+  - **tripId**: Identifier for the trip being booked.
   - **status**: Current status of the booking (e.g., confirmed, canceled).
+  - **bookingDate**: Date when the booking was made.
 
 - **User**
   - **id**: Unique identifier for the user.
   - **name**: Full name of the user.
   - **email**: Email address of the user.
+  - **phoneNumber**: Contact number of the user.
+  - **membershipStatus**: Indicates membership level/status (e.g., regular, premium).
 
 - **Payment**
-  - **id**: Unique identifier for the payment transaction.
-  - **bookingId**: Identifier for the associated booking.
-  - **amount**: Amount paid for the booking.
-  - **paymentDate**: Date when the payment was made.
-  - **paymentMethod**: Method used for payment (e.g., credit card, PayPal).
+  - **id**: Unique identifier for the payment.
+  - **bookingId**: Identifier for the booking associated with this payment.
+  - **amount**: Total amount paid.
+  - **paymentDate**: Date when the payment was processed.
+  - **paymentMethod**: Method of payment used (e.g., credit card, PayPal).
 
 - **Review**
   - **id**: Unique identifier for the review.
-  - **tripId**: Identifier for the trip being reviewed.
-  - **userId**: Identifier for the user who wrote the review.
-  - **rating**: Rating given to the trip (e.g., 1 to 5 stars).
-  - **comment**: Textual feedback provided by the user.
+  - **userId**: Identifier of the user who wrote the review.
+  - **tripId**: Identifier of the trip being reviewed.
+  - **rating**: Numeric rating given to the trip.
+  - **comments**: Text comments from the user about the trip.
+  - **reviewDate**: Date when the review was submitted.
 
-These entities and fields provide a foundational structure for managing trips, bookings, users, payments, and reviews within the BookMyTrip application.
+These entities enable core functionalities such as searching for trips, booking and canceling trips, managing user information, processing payments, and collecting user feedback through reviews.

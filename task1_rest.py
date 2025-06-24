@@ -4,7 +4,7 @@ import requests
 
 # ── HARD‐CODED LAB TOKEN ──
 # Make sure this is the exact key you verified with /models (no extra spaces).
-api_key = "sk-zO8exlBicZh7nJeZn5GuC5X9SPuVrZzXoGyOW0i9BFvN62ON"
+api_key = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
 if not api_key.startswith("sk-"):
     raise RuntimeError("Please replace api_key with your verified lab‐provided token.")
 
@@ -19,10 +19,7 @@ headers = {
 }
 
 def call_chatfire(messages_list, filename_raw, filename_clean):
-    """
-    Sends a POST to ChatFire’s /chat/completions (Section 9.1 style),
-    writes the full JSON to filename_raw, and the assistant’s content to filename_clean.
-    """
+
     payload = {
         "model": "gpt-4o",            # EXACTLY as Section 9.1 shows
         "messages": messages_list,

@@ -6,7 +6,7 @@ from openai.types.chat import ChatCompletion
 
 # ── HARD‐CODED LAB TOKEN ──
 # Paste the same ChatFire token you used in Task 1 (verified with /models)
-API_KEY = "sk-zO8exlBicZh7nJeZn5GuC5X9SPuVrZzXoGyOW0i9BFvN62ON"
+API_KEY = "sk-K0I3NbFfHA2RRhenI1ebHLAEPAb1vaBCreGMw7t8SveewCaI"
 if not API_KEY.startswith("sk-"):
     raise RuntimeError("Please replace API_KEY with your verified lab‐provided token.")
 
